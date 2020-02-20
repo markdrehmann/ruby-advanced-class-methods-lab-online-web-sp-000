@@ -33,4 +33,16 @@ class Song
     search
   end
 
+  def self.find_or_create_by_name(name)
+    search = @@all.find do |song|
+      if song.name == name
+        return song
+      else
+        create_by_name(name)
+      end
+    end
+  end
+  
+    
+
 end
