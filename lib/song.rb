@@ -29,7 +29,7 @@ class Song
   end
 
   def self.find_by_name(name)
-    search = @@all.find {|song| song.name == name}
+    search = self.all.find {|song| song.name == name}
     search
   end
 
@@ -43,7 +43,7 @@ class Song
   end
 
   def self.alphabetical
-    array = @@all.sort_by {|song| song.name}
+    array = self.all.sort_by {|song| song.name}
     array
   end
 
@@ -64,7 +64,7 @@ class Song
   end
 
   def self.destroy_all
-    @@all.clear
+    self.all.clear
   end
 
 end
